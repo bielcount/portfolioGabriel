@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Cardoso - Frontend Developer</title>
     <style>
+        /* Estilos gerais */
         * {
             margin: 0;
             padding: 0;
@@ -176,52 +177,76 @@
             transform: translateY(0);
         }
 
-        .tech-card {
-            transition: all 0.3s ease;
+        /* Estilo para as seções de Competências e Projetos */
+        .skills-section, .portfolio-section {
+            margin-bottom: 3rem;
+        }
+
+        .tech-card, .project-card {
             background: rgba(34, 34, 34, 0.8);
             backdrop-filter: blur(10px);
-        }
-
-        .tech-card:hover {
-            transform: translateY(-5px);
-            background: rgba(34, 34, 34, 0.9);
-        }
-
-        .experience-item {
-            border-left: 2px solid #00ff9d;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -0.5rem;
-            top: 0;
-            width: 1rem;
-            height: 1rem;
-            background: #00ff9d;
-            border-radius: 50%;
-        }
-
-        .portfolio-card {
-            transition: all 0.3s ease;
-            background: rgba(34, 34, 34, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.1);
-        }
-
-        .tech-icon {
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(108, 99, 255, 0.2);
             transition: all 0.3s ease;
         }
 
-        .tech-icon:hover {
-            transform: scale(1.2);
-            filter: brightness(1.2);
+        .tech-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.1);
+        }
+
+        .tech-card h3, .project-card h3 {
+            color: #00ff9d;
+        }
+
+        .tech-card p, .project-card p {
+            color: #ccc;
+        }
+
+        .tech-card ul, .project-card ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .tech-card ul li, .project-card ul li {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .tech-card ul li::before, .project-card ul li::before {
+            content: "▹";
+            color: #6c63ff;
+            margin-right: 0.5rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding-top: 60px;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -239,6 +264,7 @@
     </header>
 
     <div class="container">
+        <!-- Seção Home -->
         <section id="home" class="hero fade-in">
             <div class="hero-text">
                 <h1>Olá, eu sou o Gabriel!</h1>
@@ -250,36 +276,76 @@
             </div>
         </section>
 
+        <!-- Seção Sobre -->
         <section id="about" class="fade-in">
             <h2>Sobre</h2>
             <p>Quem eu sou?</p>
             <p>Sou Gabriel Cardoso, desenvolvedor front-end apaixonado por criar interfaces modernas e funcionais, unindo criatividade e tecnologia para proporcionar experiências digitais únicas.</p>
         </section>
 
-        <section id="skills" class="fade-in">
+        <!-- Seção Competências -->
+        <section id="skills" class="skills-section fade-in">
             <h2>Competências</h2>
+
+            <!-- Formação -->
             <div class="tech-card">
                 <h3>Formação</h3>
-                <p>Engenharia de Software - UniCesumar (Em andamento)</p>
+                <ul>
+                    <li>
+                        <strong>Engenharia de Software</strong> - UniCesumar<br>
+                        Cursando Engenharia de Software, desenvolvendo habilidades em desenvolvimento de software, arquitetura de sistemas e banco de dados.
+                    </li>
+                    <li>
+                        <strong>Trilha Backend</strong> - Oracle Next Education<br>
+                        Programa de bolsa de estudos oferecido pela Oracle em parceria com a Alura, com foco em desenvolvimento Backend. Aprendizado em Java, Spring Boot, bancos de dados e boas práticas de programação.
+                    </li>
+                </ul>
             </div>
+
+            <!-- Experiências -->
             <div class="tech-card">
                 <h3>Experiências</h3>
-                <p>Freelancer - Desenvolvimento web</p>
+                <ul>
+                    <li>
+                        <strong>Freelancer</strong> - Desenvolvimento web<br>
+                        Desenvolvimento de sites modernos e responsivos, criando soluções personalizadas para diversos nichos. Aplicação de boas práticas de desenvolvimento, design e usabilidade para garantir interfaces intuitivas e eficientes.
+                    </li>
+                    <li>
+                        <strong>Engenharia de Dados em nuvem</strong> - Compass UOL<br>
+                        Estágio em Engenharia de Dados na Compass UOL, atuando com AWS e pipelines de dados.
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <section id="portfolio" class="fade-in">
+        <!-- Seção Projetos -->
+        <section id="portfolio" class="portfolio-section fade-in">
             <h2>Projetos</h2>
-            <div class="portfolio-card">
+
+            <!-- Projeto WeCacau -->
+            <div class="project-card">
                 <h3>WeCacau</h3>
-                <p>Desenvolvimento do site da doceria WeCacau.</p>
+                <p>
+                    Desenvolvimento do site da doceria WeCacau, criando uma plataforma visualmente atrativa e funcional para destacar os produtos da marca. Implementação de um design responsivo, alinhado à identidade visual da doceria, com navegação intuitiva e otimizada para diferentes dispositivos. Utilização de HTML, Tailwind e JavaScript para estruturar, estilizar e adicionar interatividade ao site, garantindo uma experiência envolvente ao usuário.
+                </p>
             </div>
-            <div class="portfolio-card">
+
+            <!-- Projeto Blitz Café -->
+            <div class="project-card">
                 <h3>Blitz Café</h3>
-                <p>Desenvolvimento do site da cafeteria Blitz Café.</p>
+                <p>
+                    Desenvolvimento do site da cafeteria Blitz Café, criando uma interface moderna e atrativa para aprimorar a presença digital da marca. Implementação de um design responsivo, otimizado para navegação intuitiva e experiência do usuário. Aplicação de HTML, CSS e JavaScript para estruturação e interatividade, garantindo um layout harmonioso e funcional.
+                </p>
+            </div>
+
+            <!-- Projeto em breve -->
+            <div class="project-card">
+                <h3>Em breve</h3>
+                <p>Projeto em desenvolvimento.</p>
             </div>
         </section>
 
+        <!-- Seção Contato -->
         <section id="contact" class="fade-in">
             <h2>Contato</h2>
             <form id="contact-form">
@@ -312,18 +378,6 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-            });
-        });
-
-        document.querySelectorAll('.tech-icon').forEach(icon => {
-            icon.addEventListener('mouseover', function() {
-                this.style.transform = 'scale(1.2)';
-                this.style.transition = 'transform 0.3s ease';
-            });
-
-            icon.addEventListener('mouseout', function() {
-                this.style.transform = 'scale(1)';
-                this.style.transition = 'transform 0.3s ease';
             });
         });
 
